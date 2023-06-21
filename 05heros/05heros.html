@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>MY Login</title>
+</head>
+<body class="bg-dark text-light" id="vapp">
+    <div class="container mt-4">
+        <h2 class="display-3">Single hero</h2>
+        <select v-model="heroselect" class="form-select">
+            <option selected value=""> Choose a super hero</option>
+            <option>Iron Man</option>
+            <option>Hulk</option>
+            <option>Thor</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">calling, {{heroselect}}</h2>
+
+        <h2 class="display-3">Avanger Team</h2>
+        <select v-model="avangerselect" multiple class="form-select">
+            <option selected value=""> Choose multiple super hero</option>
+            <option value="Iron man">Iron Man</option>
+            <option value="peter parker">Spider Man</option>
+            <option value="Capt. Amrica">Captain Amrica</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">A team, {{avangerselect}}</h2>
+
+        <h2 class="display-3">Bond Code</h2>
+        <select v-model="myDynamic" class="form-select">
+            <option selected value=""> Choose bond...</option>
+            <option v-for="option in myBonds"
+            :value="option.value">{{option.text}}</option>
+        </select> 
+        <h2 class="btn bg-warning mt-3">Bond Code, {{myDynamic}}</h2>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
